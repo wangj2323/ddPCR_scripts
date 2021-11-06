@@ -11,8 +11,10 @@ Type this into Git Bash: git clone https://github.com/wangj2323/ddPCR_scripts.gi
 
 ![image](https://user-images.githubusercontent.com/93787873/140587774-479b5fc5-05de-4bc8-b15b-dcc9486b153c.png)
 
+
 You will now see the files in your directory. 
 Now open "Command Prompt"
+
 
 On Command Prompt, type in location of code, EX (include the "cd"):
 cd "C:\Users\jgee\OneDrive - Sangamo Therapeutics\Documents\ddPCR_scripts"
@@ -29,14 +31,19 @@ Here's an example of what the files look like in the code folder:
 
 
 An example of what the files in the named run folder look like:
+
 ![image](https://user-images.githubusercontent.com/93787873/140591815-89218f02-ba64-4f88-9da5-f6d5d3dc116e.png)
 
 
 This is an example of how the plate map should be formatted (Assay SPACE SampleName SPACE Dilution)
+
 ![image](https://user-images.githubusercontent.com/93787873/140591875-5db28829-7851-4edb-a913-c2cf8a635fe2.png)
+
 
 
 Then execute python ddPCR_analysis.py inputting the name of the folder.
 
+
 EX: 
+
 ![image](https://user-images.githubusercontent.com/93787873/140591296-de3e9e82-7732-4030-9306-2e5e29a34fee.png)
