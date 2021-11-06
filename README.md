@@ -23,8 +23,13 @@ pip install -r requirements.txt
 Then load your files into this directory.
 One folder with name of your choice. Inside the folder should be "input_data.csv" and "plate_map.csv" in format Microsoft Excel Comma Separated Values File
 
+
 ![image](https://user-images.githubusercontent.com/93787873/140591785-3e3b7af7-345b-4695-9549-78a7aaed8f73.png)
 
+![image](https://user-images.githubusercontent.com/93787873/140591815-89218f02-ba64-4f88-9da5-f6d5d3dc116e.png)
+
+
 Then execute python ddPCR_analysis.py inputting the name of the folder.
+
 EX: 
 ![image](https://user-images.githubusercontent.com/93787873/140591296-de3e9e82-7732-4030-9306-2e5e29a34fee.png)
