@@ -36,6 +36,9 @@ An example of what the files in the named run folder look like:
 
 
 This is an example of how the plate map should be formatted (Assay SPACE SampleName SPACE Dilution)
+"NA" for blank wells
+"Assay SPACE 'NTC'" for NTC wells
+"Map" in the upper right corner, 1-12 horizontal, A-H vertical from there
 
 ![image](https://user-images.githubusercontent.com/93787873/140591875-5db28829-7851-4edb-a913-c2cf8a635fe2.png)
 
