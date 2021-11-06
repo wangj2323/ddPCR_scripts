@@ -3,12 +3,12 @@
 
 Install git from https://git-scm.com/download/win. "64-bit Git for Windows Setup." After installation use Git Bash to download script from Github.
 
-Tell it where to place the file by typing the location. EX: cd c/Users/jgee/'OneDrive - Sangamo Therapeutics'/Documents
+Tell it where to place the file by typing the location. EX: **cd c/Users/jgee/'OneDrive - Sangamo Therapeutics'/Documents**
 
 ![image](https://user-images.githubusercontent.com/93787873/140587499-fe8e790c-d867-4f77-9d90-a136f9d0f704.png)
 
-Type this into Git Bash: git clone https://github.com/wangj2323/ddPCR_scripts.git
-
+Type this into Git Bash: **git clone https://github.com/wangj2323/ddPCR_scripts.git
+**
 ![image](https://user-images.githubusercontent.com/93787873/140587774-479b5fc5-05de-4bc8-b15b-dcc9486b153c.png)
 
 
@@ -17,10 +17,10 @@ Now open "Command Prompt"
 
 
 On Command Prompt, type in location of code, EX (include the "cd"):
-cd "C:\Users\jgee\OneDrive - Sangamo Therapeutics\Documents\ddPCR_scripts"
+**cd "C:\Users\jgee\OneDrive - Sangamo Therapeutics\Documents\ddPCR_scripts"**
 
 Once in directory, type in (only needed once, for setup):
-pip install -r requirements.txt 
+**pip install -r requirements.txt **
 
 Then load your files into this directory.
 One folder with name of your choice. Inside the folder should be "input_data.csv" and "plate_map.csv," both in Microsoft Excel Comma Separated Values File format.
