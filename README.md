@@ -26,7 +26,11 @@ One folder with name of your choice. Inside the folder should be "input_data.csv
 
 ![image](https://user-images.githubusercontent.com/93787873/140591785-3e3b7af7-345b-4695-9549-78a7aaed8f73.png)
 
+
 ![image](https://user-images.githubusercontent.com/93787873/140591815-89218f02-ba64-4f88-9da5-f6d5d3dc116e.png)
+
+
+![image](https://user-images.githubusercontent.com/93787873/140591875-5db28829-7851-4edb-a913-c2cf8a635fe2.png)
 
 
 Then execute python ddPCR_analysis.py inputting the name of the folder.
