@@ -3,7 +3,7 @@
 
 Install git from https://git-scm.com/download/win. "64-bit Git for Windows Setup." After installation use Git Bash to download script from Github.
 
-Tell it where to place the file. EX: cd c/Users/jgee/'OneDrive - Sangamo Therapeutics'/Documents
+Tell it where to place the file by typing the location. EX: cd c/Users/jgee/'OneDrive - Sangamo Therapeutics'/Documents
 
 ![image](https://user-images.githubusercontent.com/93787873/140587499-fe8e790c-d867-4f77-9d90-a136f9d0f704.png)
 
