@@ -30,6 +30,7 @@ One folder with name of your choice. Inside the folder should be "input_data.csv
 ![image](https://user-images.githubusercontent.com/93787873/140591815-89218f02-ba64-4f88-9da5-f6d5d3dc116e.png)
 
 
+This is an example of how the plate map should be formatted
 ![image](https://user-images.githubusercontent.com/93787873/140591875-5db28829-7851-4edb-a913-c2cf8a635fe2.png)
 
 
