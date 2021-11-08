@@ -1,6 +1,8 @@
 # ddPCR_scripts
 
 
+First install Python on your laptop by going to the Sangamo IT Self Help Portal (click on the arrow in the lower left of your desktop, and then the Sangamo logo).
+
 Install git from https://git-scm.com/download/win. "64-bit Git for Windows Setup" with all default settings. After installation, open Git Bash to download script from Github.
 
 Tell it where to place the file by typing the location. EX: **cd c/Users/jgee/'OneDrive - Sangamo Therapeutics'/Documents**
