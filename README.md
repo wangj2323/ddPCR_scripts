@@ -7,8 +7,8 @@ Tell it where to place the file by typing the location. EX: **cd c/Users/jgee/'O
 
 ![image](https://user-images.githubusercontent.com/93787873/140587499-fe8e790c-d867-4f77-9d90-a136f9d0f704.png)
 
-Type this into Git Bash: **git clone https://github.com/wangj2323/ddPCR_scripts.git
-**
+Type this into Git Bash: **git clone https://github.com/wangj2323/ddPCR_scripts.git**
+
 ![image](https://user-images.githubusercontent.com/93787873/140587774-479b5fc5-05de-4bc8-b15b-dcc9486b153c.png)
 
 
@@ -20,7 +20,7 @@ On Command Prompt, type in location of code, EX (include the "cd", same as above
 **cd "C:\Users\jgee\OneDrive - Sangamo Therapeutics\Documents\ddPCR_scripts"**
 
 Once in directory, type in (only needed once, for setup):
-**pip install -r requirements.txt **
+**pip install -r requirements.txt**
 
 Then load your files into this directory for each run. One folder per run.
 
