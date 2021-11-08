@@ -1,7 +1,7 @@
 # ddPCR_scripts
 
 
-Install git from https://git-scm.com/download/win. "64-bit Git for Windows Setup." After installation use Git Bash to download script from Github.
+Install git from https://git-scm.com/download/win. "64-bit Git for Windows Setup" with all default settings. After installation, open Git Bash to download script from Github.
 
 Tell it where to place the file by typing the location. EX: **cd c/Users/jgee/'OneDrive - Sangamo Therapeutics'/Documents**
 
@@ -13,24 +13,24 @@ Type this into Git Bash: **git clone https://github.com/wangj2323/ddPCR_scripts.
 
 
 You will now see the files in your directory. 
-Now open "Command Prompt"
+Now open "Command Prompt" from your computer.
 
 
-On Command Prompt, type in location of code, EX (include the "cd"):
+On Command Prompt, type in location of code, EX (include the "cd", same as above):
 **cd "C:\Users\jgee\OneDrive - Sangamo Therapeutics\Documents\ddPCR_scripts"**
 
 Once in directory, type in (only needed once, for setup):
 **pip install -r requirements.txt **
 
-Then load your files into this directory.
-One folder with name of your choice. Inside the folder should be "input_data.csv" and "plate_map.csv," both in Microsoft Excel Comma Separated Values File format.
+Then load your files into this directory for each run. One folder per run.
+Name folder with name of your choice. Inside the folder should be "input_data.csv" and "plate_map.csv," both in Microsoft Excel Comma Separated Values File format.
 Here's an example of what the files look like in the code folder:
 
 
 ![image](https://user-images.githubusercontent.com/93787873/140591785-3e3b7af7-345b-4695-9549-78a7aaed8f73.png)
 
 
-An example of what the files in the named run folder look like:
+Here's an example of what the files in the named run folder look like:
 
 ![image](https://user-images.githubusercontent.com/93787873/140591815-89218f02-ba64-4f88-9da5-f6d5d3dc116e.png)
 
