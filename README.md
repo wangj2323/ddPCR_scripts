@@ -23,6 +23,7 @@ Once in directory, type in (only needed once, for setup):
 **pip install -r requirements.txt **
 
 Then load your files into this directory for each run. One folder per run.
+
 Name folder with name of your choice. Inside the folder should be "input_data.csv" and "plate_map.csv," both in Microsoft Excel Comma Separated Values File format.
 Here's an example of what the files look like in the code folder:
 
@@ -36,8 +37,11 @@ Here's an example of what the files in the named run folder look like:
 
 
 This is an example of how the plate map should be formatted (Assay SPACE SampleName SPACE Dilution)
+
 "NA" for blank wells
+
 "Assay SPACE 'NTC'" for NTC wells
+
 "Map" in the upper right corner, 1-12 horizontal, A-H vertical from there
 
 ![image](https://user-images.githubusercontent.com/93787873/140591875-5db28829-7851-4edb-a913-c2cf8a635fe2.png)
