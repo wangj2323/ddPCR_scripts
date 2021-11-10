@@ -71,9 +71,12 @@ Then execute python ddPCR_analysis.py copy/pasting the below and only changing t
 
 Type in **python ddPCR_analysis.py ASRv65/input_data.csv ASRv65/plate_map.csv** changing the "ASRv65" to the run folder name you want to analyze.
 
-Click Enter to execute. Run is completed when it says "PROCESS COMPLETE"
+Click Enter to execute. Run is completed when it says "PROCESS COMPLETE." It will create new "Output" files in the code folder. One output file per channel.
+There are 3 tabs; one with output calculations for samples and NTC at bottom, one NTC only, and one summary.
 
-If errors occur, please double check the plate map and file formats.
+The code excludes high OOR values and "No Call" but manual analysis and check and recalculation of Linearity and CV are needed.
+
+If errors occur in code, please double check the plate map and file formats.
 
 
 
