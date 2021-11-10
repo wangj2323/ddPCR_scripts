@@ -29,7 +29,6 @@ def analysis(input_data, plate_map, output_name):
 	for well in [(i[0], int(i[1:])) for i in input_data['Well']]:
 	    try:
 	        desc = plate_map.loc[well[0], str(well[1])].split()
-	        print(desc)
 	        if len(desc) == 2:
 	            s1.append(desc[0]+ ' ' +desc[1])
 	            s2.append('')
