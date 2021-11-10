@@ -62,16 +62,18 @@ This is an example of how the plate map should be formatted with only this in th
 
 ![image](https://user-images.githubusercontent.com/93787873/140591875-5db28829-7851-4edb-a913-c2cf8a635fe2.png)
 
+Type in the location of the ddPCR_scripts folder again as mentioned above.
+
+![image](https://user-images.githubusercontent.com/93787873/141070746-aa72ef7b-ecf7-4d0f-b24c-6273234e6b76.png)
+
 
 Then execute python ddPCR_analysis.py copy/pasting the below and only changing the name of the folder run.
 
-Type in **python analysis.py  testdata3/input_data.csv testdata3/plate_map.csv** changing the "testdata3" to the run folder name you want to analyze.
+Type in **python ddPCR_analysis.py ASRv65/input_data.csv ASRv65/plate_map.csv** changing the "ASRv65" to the run folder name you want to analyze.
 
 Click Enter to execute. Run is completed when it says "PROCESS COMPLETE"
 
 If errors occur, please double check the plate map and file formats.
 
 
-EX: 
 
-![image](https://user-images.githubusercontent.com/93787873/140591296-de3e9e82-7732-4030-9306-2e5e29a34fee.png)
