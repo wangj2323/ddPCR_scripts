@@ -2,7 +2,7 @@
 
 HOW TO SET UP AND INSTALL CODE (ONE TIME): 
 
-First install Python on your laptop by going to the Sangamo IT Self Help Portal (click on the arrow in the lower left of your desktop, and then the Sangamo logo) or ask IT.
+First install Python on your laptop by going to the Sangamo IT Self Help Portal (click on the arrow in the lower left of your desktop, and then right click the Sangamo logo> "self help portal" and find the program).
 
 Install git from https://git-scm.com/download/win. "64-bit Git for Windows Setup" with all default settings. After installation, open Git Bash to download script from Github.
 
