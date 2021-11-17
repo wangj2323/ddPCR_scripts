@@ -262,12 +262,11 @@ def analysis(input_data, plate_map, output_name):
 	print("PROCESS COMPLETE")
 
 if __name__ == "__main__":
-	input_data = sys.argv[1]
-	plate_map = sys.argv[2]
-	input_data = pd.read_csv(input_data, encoding = 'utf8')
+	out_put = sys.argv[1]
+	input_data = pd.read_csv(out_put + "/input_data.csv", encoding = 'utf8')
 	channel = set(input_data['Target'])
-	plate_map = pd.read_csv(plate_map,  index_col = "Map")
+	plate_map = pd.read_csv(out_put + "/plate_map.csv",  index_col = "Map")
 	for i in channel:
 		channel_input_data = input_data[input_data['Target'] == i]
-		analysis(channel_input_data, plate_map, "output channel " + str(i) + '.xlsx')
+		analysis(channel_input_data, plate_map, out_put + "/output channel " + str(i) + '.xlsx')
 
