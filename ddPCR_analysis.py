@@ -2,6 +2,8 @@ import pandas as pd
 import numpy as np
 import math
 import sys 
+import plotly.express as px 
+
 DILUTION_DICT = {'D01': 200,
 				'D02': 2000, 
 				'D03': 20000,
@@ -216,6 +218,42 @@ def analysis(input_data, plate_map, output_name):
 
 
 	result = pd.concat([sorted_input_data, sorted_input_data_NTC], ignore_index=True, sort=False) 
+	unique_vector = set(result['Vector'])
+	colors = px.colors.qualitative.T10
+	colors = 2*list(colors)
+	colors = colors[:len(unique_vector)]
+	colors_dict = dict(zip(unique_vector, colors))
+	print(colors_dict)
+
+	def _RSD_problem(val, props = '', subset = None):
+		if val == '':
+			return None
+		elif float(val) > 8:
+			return props
+		return None
+
+	def _Lin_problem(val, props = '', subset = None):
+		if val == '':
+			return None
+		elif float(val) >= 1.1 or float(val) <= 0.9:
+			return props
+		return None
+
+	def highlight_colors(x) :
+		lis = []
+		df1 = pd.DataFrame('', index=x.index, columns=x.columns)
+
+		for i in x['Vector']:
+			color = colors_dict[i]
+			df1.loc[(x['Vector'] == i) ]  = 'background-color: ' + color
+		
+		print(df1)
+		return df1
+
+    
+	result = result.style.applymap(_Lin_problem, props  = 'color:red;font-weight:bold', subset=pd.IndexSlice[:, ['linearity']])
+	result.applymap(_RSD_problem, props  = 'color:red;font-weight:bold', subset=pd.IndexSlice[:, ['RSD']])
+	result.apply(highlight_colors, axis = None)
 
 	with pd.ExcelWriter(output_name) as writer:
 	    result.to_excel(writer, sheet_name='Output_Data', index = False)
@@ -227,7 +265,7 @@ def analysis(input_data, plate_map, output_name):
 if __name__ == "__main__":
 	input_data = sys.argv[1]
 	plate_map = sys.argv[2]
-	input_data = pd.read_csv(input_data)
+	input_data = pd.read_csv(input_data, encoding = 'utf8')
 	channel = set(input_data['Target'])
 	plate_map = pd.read_csv(plate_map,  index_col = "Map")
 	for i in channel:
