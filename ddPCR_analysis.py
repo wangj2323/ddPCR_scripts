@@ -219,11 +219,11 @@ def analysis(input_data, plate_map, output_name):
 
 	result = pd.concat([sorted_input_data, sorted_input_data_NTC], ignore_index=True, sort=False) 
 	unique_vector = set(result['Vector'])
-	colors = px.colors.qualitative.T10
+	colors = list(px.colors.qualitative.T10)
+	colors = [i for i in colors if i !='#E45756']
 	colors = 2*list(colors)
 	colors = colors[:len(unique_vector)]
 	colors_dict = dict(zip(unique_vector, colors))
-	print(colors_dict)
 
 	def _RSD_problem(val, props = '', subset = None):
 		if val == '':
@@ -247,7 +247,6 @@ def analysis(input_data, plate_map, output_name):
 			color = colors_dict[i]
 			df1.loc[(x['Vector'] == i) ]  = 'background-color: ' + color
 		
-		print(df1)
 		return df1
 
     
