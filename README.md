@@ -40,7 +40,7 @@ HOW TO RUN CODE:
 
 Load your files into this "ddPCR_scripts" folder in your directory for each run. One folder per run.
 
-Name folder with name of your choice. Inside the folder should be these two sheets "input_data.csv" and "plate_map.csv," both in Microsoft Excel Comma Separated Values File format (aka CSV UTF-8 (comma delimited)(*.csv)").
+Name folder with name of your choice. Make sure there are NO SPACES. Inside the folder should be these two sheets "input_data.csv" and "plate_map.csv," both in Microsoft Excel Comma Separated Values File format (aka CSV UTF-8 (comma delimited)(*.csv)").
 
 Here's an example of what the files look like in the code folder:
 
