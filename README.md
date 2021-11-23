@@ -62,21 +62,44 @@ This is an example of how the plate map should be formatted with only this in th
 
 ![image](https://user-images.githubusercontent.com/93787873/140591875-5db28829-7851-4edb-a913-c2cf8a635fe2.png)
 
-Type in the location of the ddPCR_scripts folder again as mentioned above.
+Type in the location of the ddPCR_scripts folder again as mentioned above. EX: **cd "C:\Users\jgee\Documents\ddPCR_scripts"**
 
 ![image](https://user-images.githubusercontent.com/93787873/141070746-aa72ef7b-ecf7-4d0f-b24c-6273234e6b76.png)
 
 
 Then execute python ddPCR_analysis.py copy/pasting the below and only changing the name of the folder run.
 
-Type in **python ddPCR_analysis.py ASRv65/input_data.csv ASRv65/plate_map.csv** changing the "ASRv65" to the run folder name you want to analyze.
+Type in **python ddPCR_analysis.py ASRv65** changing the "ASRv65" to the run folder name you want to analyze.
 
-Click Enter to execute. Run is completed when it says "PROCESS COMPLETE." It will create new "Output" files in the code folder. One output file per channel.
-There are 3 tabs; one with output calculations for samples and NTC at bottom, one NTC only, and one summary.
+Click Enter to execute. Run is completed when it says "PROCESS COMPLETE." 
 
-The code excludes high OOR values and "No Call" but manual analysis and check and recalculation of Linearity and CV are needed.
+![image](https://user-images.githubusercontent.com/93787873/142159421-3cc38493-a3be-4218-8cac-c9d10b036b53.png)
 
+
+It will create new "Output" files in the same input folder, one output file per channel.
+In each file there are 3 tabs; one with output calculations for samples and NTC at bottom, one NTC only, and one summary.
+
+The code excludes high OOR values and "No Call"
+The code color codes each sample for easy viewing, and makes the questionable CV and Linearity values RED for manual exclusion based on user discretion.
 If errors occur in code, please double check the plate map and file formats.
+
+
+DOWNLOADING CODE UPDATES WHEN IMPLEMENTED:
+
+Open Git Bash.
+
+Type in location of the file. EX: **cd /C/Users/jgee/Documents/ddPCR_scripts** Click Enter.
+
+Then type **git pull** and click Enter.
+
+![image](https://user-images.githubusercontent.com/93787873/142161730-f9aa8fc7-ec32-409d-bfa0-8043d0841064.png)
+
+Then open Command Prompt and go to directory. EX: **cd "C:\Users\jgee\Documents\ddPCR_scripts"** then click Enter.
+
+Type in **pip install -r requirements.txt** and click Enter.
+
+The code should now be running normally.
+
 
 
 
