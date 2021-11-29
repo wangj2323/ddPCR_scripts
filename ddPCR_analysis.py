@@ -60,6 +60,12 @@ def analysis(input_data, plate_map, output_name):
 		else:
 			return str(float(x.replace(',', '')))
 
+	def format_conc_NTC(x) : 
+		if x == 'No Call':
+			return 0.0
+		else:
+			return str(float(x.replace(',', '')))
+
 	sorted_input_data['Conc(copies/µL)']= (sorted_input_data['Conc(copies/µL)'].apply(lambda x: format_conc(x)))
 
 	def get_dilution(Cond, dilution_dict):
@@ -126,11 +132,13 @@ def analysis(input_data, plate_map, output_name):
 	sorted_input_data_NTC = input_data.sort_values(["Vector", "Condition", "Well"], ascending = (True, True, True))
 	sorted_input_data_NTC = sorted_input_data_NTC.loc[sorted_input_data_NTC['Vector'].str.contains('NTC') ]
 
-	sorted_input_data_NTC['Conc(copies/µL)'] = sorted_input_data_NTC['Conc(copies/µL)'].apply(lambda x: format_conc(x))
+	sorted_input_data_NTC['Conc(copies/µL)'] = sorted_input_data_NTC['Conc(copies/µL)'].apply(lambda x: format_conc_NTC(x))
 	sorted_input_data_NTC['Conc(copies/µL)'] = pd.to_numeric(sorted_input_data_NTC['Conc(copies/µL)'])
+
 	NTC_calculations = sorted_input_data_NTC[(sorted_input_data_NTC['Conc(copies/µL)'] != 'No Call')& 
 	                                 (sorted_input_data_NTC['Conc(copies/µL)'] != '1000000.00' ) &
 	                                (sorted_input_data_NTC['Accepted Droplets'] >= 10000)].groupby(['Vector'])['Conc(copies/µL)'].aggregate([np.mean]).reset_index()
+
 
 
 	sorted_input_data['vg/ml'] = pd.to_numeric(sorted_input_data['vg/ml'])
