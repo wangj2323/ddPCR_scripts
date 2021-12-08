@@ -237,14 +237,21 @@ def analysis(input_data, plate_map, output_name):
 	def _RSD_problem(val, props = '', subset = None):
 		if val == '':
 			return None
-		elif float(val) > 8:
+		elif float(val) >= 8:
+			return props
+		return None
+
+	def _RSDSUMMARY_problem(val, props = '', subset = None):
+		if val == '':
+			return None
+		elif float(val) >= 10:
 			return props
 		return None
 
 	def _Lin_problem(val, props = '', subset = None):
 		if val == '':
 			return None
-		elif float(val) >= 1.1 or float(val) <= 0.9:
+		elif float(val) > 1.1 or float(val) < 0.9:
 			return props
 		return None
 
@@ -258,9 +265,10 @@ def analysis(input_data, plate_map, output_name):
 		
 		return df1
 
-    
+	print(result['RSD_summary'])
 	result = result.style.applymap(_Lin_problem, props  = 'color:red;font-weight:bold', subset=pd.IndexSlice[:, ['linearity']])
 	result.applymap(_RSD_problem, props  = 'color:red;font-weight:bold', subset=pd.IndexSlice[:, ['RSD']])
+	result.applymap(_RSDSUMMARY_problem, props = 'color:red;font-weight:bold', subset = pd.IndexSlice[:, ['RSD_summary']])
 	result.apply(highlight_colors, axis = None)
 
 	with pd.ExcelWriter(output_name) as writer:
