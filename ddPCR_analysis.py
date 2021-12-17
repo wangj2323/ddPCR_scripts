@@ -126,9 +126,9 @@ def analysis(input_data, plate_map, output_name):
 	    else:
 	        return(str(x))
 	               
-	sorted_input_data['Dilution Factor'] = sorted_input_data['Dilution Factor'].apply(lambda x: convert_to_science(x))
-	sorted_input_data['mean'] = sorted_input_data['mean'].apply(lambda x: convert_to_science(x))
-	sorted_input_data['std'] = sorted_input_data['std'].apply(lambda x: convert_to_science(x))
+	# sorted_input_data['Dilution Factor'] = sorted_input_data['Dilution Factor'].apply(lambda x: convert_to_science(x))
+	# sorted_input_data['mean'] = sorted_input_data['mean'].apply(lambda x: convert_to_science(x))
+	# sorted_input_data['std'] = sorted_input_data['std'].apply(lambda x: convert_to_science(x))
 	sorted_input_data_NTC = input_data.sort_values(["Vector", "Condition", "Well"], ascending = (True, True, True))
 	sorted_input_data_NTC = sorted_input_data_NTC.loc[sorted_input_data_NTC['Vector'].str.contains('NTC') ]
 
@@ -145,9 +145,9 @@ def analysis(input_data, plate_map, output_name):
 	summary_sorted_input_data = sorted_input_data[sorted_input_data['vg/ml'] != MIN_FLOAT]
 	summary_sorted_input_data = summary_sorted_input_data.groupby(['Vector'])['vg/ml'].aggregate([np.mean, np.std]).reset_index()
 	summary_sorted_input_data["RSD"] = round(summary_sorted_input_data['std']/summary_sorted_input_data['mean'] * 100,2)
-	summary_sorted_input_data['mean'] = summary_sorted_input_data['mean'].apply(lambda x: convert_to_science(x))
-	summary_sorted_input_data['std'] = summary_sorted_input_data['std'].apply(lambda x: convert_to_science(x))
-	sorted_input_data['vg/ml'] = sorted_input_data['vg/ml'].apply(lambda x: convert_to_science(x))
+	# summary_sorted_input_data['mean'] = summary_sorted_input_data['mean'].apply(lambda x: convert_to_science(x))
+	# summary_sorted_input_data['std'] = summary_sorted_input_data['std'].apply(lambda x: convert_to_science(x))
+	# sorted_input_data['vg/ml'] = sorted_input_data['vg/ml'].apply(lambda x: convert_to_science(x))
 
 
 	prev = ""
@@ -265,7 +265,6 @@ def analysis(input_data, plate_map, output_name):
 		
 		return df1
 
-	print(result['RSD_summary'])
 	result = result.style.applymap(_Lin_problem, props  = 'color:red;font-weight:bold', subset=pd.IndexSlice[:, ['linearity']])
 	result.applymap(_RSD_problem, props  = 'color:red;font-weight:bold', subset=pd.IndexSlice[:, ['RSD']])
 	result.applymap(_RSDSUMMARY_problem, props = 'color:red;font-weight:bold', subset = pd.IndexSlice[:, ['RSD_summary']])
