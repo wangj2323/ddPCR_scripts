@@ -86,14 +86,21 @@ def analysis(input_data, plate_map, output_name):
 
 	sorted_input_data['vg/ml'] = sorted_input_data.apply(lambda x: get_vg(x['Vector'], x['Dilution Factor'], x['Conc(copies/µL)'], x['Accepted Droplets']), axis=1)
 
-
+	
 	calculations = sorted_input_data[(sorted_input_data['Conc(copies/µL)'] != 'No Call')  & 
 	                                 (sorted_input_data['Conc(copies/µL)'] != '1000000.00' ) &
 	                                (sorted_input_data['Accepted Droplets'] >= 10000)].groupby(['Vector', 'Condition'])['vg/ml'].aggregate([np.mean, np.std]).reset_index()
 	def get_mean(sample, dilution):
-	    return float(calculations[(calculations['Vector'] == sample) & (calculations['Condition'] == dilution)]['mean'])
+            try:
+                return float(calculations[(calculations['Vector'] == sample) & (calculations['Condition'] == dilution)]['mean'])
+            except Exception as e:
+                return -1
 	def get_std(sample, dilution):
-	    return float(calculations[(calculations['Vector'] == sample) & (calculations['Condition'] == dilution)]['std'])
+            try:
+                return float(calculations[(calculations['Vector'] == sample) & (calculations['Condition'] == dilution)]['std'])
+            except:
+                return -1
+
 	sorted_input_data['mean'] = sorted_input_data.apply(lambda x: get_mean(x['Vector'], x['Condition']), axis=1)
 	sorted_input_data['std'] = sorted_input_data.apply(lambda x: get_std(x['Vector'], x['Condition']), axis=1)
 	sorted_input_data['RSD'] = round(sorted_input_data['std']/sorted_input_data['mean'] * 100,2)
